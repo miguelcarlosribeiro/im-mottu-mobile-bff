@@ -8,9 +8,4 @@ import { ApiTags, ApiOperation } from '@nestjs/swagger';
 export class AppController {
   constructor(private readonly appService: AppService) {}
   
-  @Get()
-  @ApiOperation({ summary: 'Retorna o status da aplicação' })
-  getHello(): string {
-    return this.appService.getHello();
-  }
 }

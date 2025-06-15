@@ -5,16 +5,14 @@ import { Cat } from "./cats.dto";
 
 @Injectable()
 export class catsClient {
-    private readonly logger = new Logger(catsClient.name);
+  private readonly logger = new Logger(catsClient.name);
 
-  constructor(private readonly http: HttpService){
-
-  }
+  constructor(private readonly http: HttpService){}
 
   async getCat(): Promise<any>{
     try{
       const { data } = await firstValueFrom(
-        this.http.get(`https://api.thecatapi.com/v1/images/search`)
+        this.http.get(`/v1/images/search`)
       )
         const dto:  Cat = {
               id: data[0].id,

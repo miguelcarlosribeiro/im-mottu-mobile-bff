@@ -1,8 +1,7 @@
 import { Injectable } from "@nestjs/common";
-import { RickAndMortyClient } from "../rickAndMorty/rickAndMorty.client";
 import { catsService } from "../cats/cats.service";
 import { RickAndMortyService } from "../rickAndMorty/rickAndMorty.service";
-import { Pair } from "./pairs.dto";
+
 
 @Injectable()
 export class PairsService{
@@ -12,6 +11,29 @@ export class PairsService{
   ){}
 
   async getrandomPairs(){
+    
+    const [
+      character,
+       cat
+      ] = await Promise.all([
+        this.rickAndMortyService.getCharacter(),
+        this.catsService.getRandomCat()
+        ])
+
+
+    return {
+      character: {
+        name: character.name,
+        image: character.image,
+        species: character.species,
+      },
+      cat: {
+        id: cat.id,
+        image: cat.image,
+      },
+    };
+  }
+  async getByBreed(){
     
     const character = await this.rickAndMortyService.getCharacter();
 

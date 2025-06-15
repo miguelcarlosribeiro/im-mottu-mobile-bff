@@ -5,6 +5,10 @@ import { HttpModule } from '@nestjs/axios';
 import { PairsModule } from './pairs/pairs.module';
 
 @Module({
-  imports: [HttpModule, RickAndMortyModule, CatsModule, PairsModule],
+  imports: [HttpModule,
+            RickAndMortyModule,
+            CatsModule,
+            PairsModule
+          ],
 })
 export class AppModule {}

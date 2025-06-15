@@ -14,4 +14,7 @@ export class RickAndMortyService {
     const randomId = this.getRandomInt(1, maxId);
     return this.client.getCharacter(randomId);
   }
+  async searchCharacter(name): Promise<any> {
+    return this.client.searchCharacter(name);
+  }
 }
