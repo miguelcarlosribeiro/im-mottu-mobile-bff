@@ -1,6 +1,6 @@
-import { Controller, Get } from "@nestjs/common";
+import { Controller, Get, Query } from "@nestjs/common";
 import { PairsService } from "./pairs.service";
-import { ApiOkResponse, ApiTags } from "@nestjs/swagger";
+import { ApiOkResponse, ApiQuery, ApiTags } from "@nestjs/swagger";
 import { Pair } from "./pairs.dto";
 
 @ApiTags('Pairs')
@@ -13,5 +13,13 @@ export class PairsController {
     async getRandomPair(){
       return this.pairsService.getrandomPairs();
     }
-  
+    @Get('search')
+    @ApiOkResponse({ type: Pair })
+    @ApiQuery({ name: 'characterName', required: false, description: 'Busca um personagem pelo nome' })
+    @ApiQuery({ name: 'catBreed', required: false, description: 'Busca um gato pela raca' })
+    async getDoubleTeam(
+      @Query('characterName') characterName: string,
+      @Query('catBreed') catBreed: string){
+      return this.pairsService.getByBreed(characterName,catBreed);
+    }
 }
