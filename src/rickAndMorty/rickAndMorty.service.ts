@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, Query } from '@nestjs/common';
 import { RickAndMortyClient } from './rickAndMorty.client';
 
 @Injectable()
@@ -14,7 +14,7 @@ export class RickAndMortyService {
     const randomId = this.getRandomInt(1, maxId);
     return this.client.getCharacter(randomId);
   }
-  async searchCharacter(name): Promise<any> {
+  async searchCharacter(@Query('name') name: string): Promise<any> {
     return this.client.searchCharacter(name);
   }
 }

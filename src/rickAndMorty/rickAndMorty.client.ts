@@ -14,7 +14,7 @@ export class RickAndMortyClient {
   constructor(private readonly http: HttpService){
 
   }
-  apiLink = 'rickandmortyapi.com/api/character/'
+  apiLink = 'https://rickandmortyapi.com/api/character/'
   @Get()
   @ApiOperation({ summary: 'Retorna um personagem aleatorio da api do Rick and Morty' })
   async getCharacter(page:number): Promise<any>{
@@ -42,9 +42,9 @@ export class RickAndMortyClient {
         this.http.get(`${this.apiLink}?name=${name}`)
       )
       const dto:  Personagem = {
-        name: data.name,
-        image: data.image,
-        species: data.species,
+        name: data.results[0].name,
+        image: data.results[0].image,
+        species: data.results[0].species,
       };
       return dto;
     }catch (e){

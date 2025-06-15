@@ -13,7 +13,7 @@ export class RickAndMortyController {
   }
   @Get('searchCharacter')
   @ApiQuery({ name: 'name', required: true, description: 'Nome do personagem para busca' })
-  async searchCharacter(name) {
+  async searchCharacter(@Query('name') name: string) {
     const characters = await this.service.searchCharacter(name);
     return characters;
   }
