@@ -14,7 +14,7 @@ import { PairsModule } from './pairs/pairs.module';
               ttl: 60_000,
               max: 100,
               isGlobal: true,
-            })
+            }),
           ]
           ,
 })

@@ -12,6 +12,6 @@ export class breed{
   @ApiProperty({description: 'Id da raca'})
   id: string;
 
-  @ApiProperty({description: 'nome da raca'})
+  @ApiProperty({description: 'Nome da raca'})
   name: string;
 }

@@ -10,3 +10,21 @@ export class Pair{
   cat: Cat;
 
 }
+
+export class FavoritesPairs {
+  @ApiProperty({description: 'Nome do personagem'})
+  characterName: string;
+
+  @ApiProperty({description: 'Imagem do personagem'})
+  characterImage: string;
+
+  @ApiProperty({description: 'Especie do personagem'})
+  characterSpecies: string;
+
+  @ApiProperty({description: 'ID do gato'})
+  catId: string;
+
+  @ApiProperty({description: 'Imagem do gato'})
+  catImage: string;
+}
+
