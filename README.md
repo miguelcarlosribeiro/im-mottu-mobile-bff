@@ -23,6 +23,27 @@
 
 ## Description
 
+Este projeto é uma API feita com NestJS que consome duas APIs públicas: a Rick and Morty API e a The Cat API. Com ela, é possível buscar personagens por nome, buscar gatos por raça e gerar pares entre um personagem e um gato. Também é possível salvar esses pares como favoritos, usando memória.
+
+Entre as principais funcionalidades, estão:
+
+Buscar personagens de Rick and Morty
+
+Listar raças de gatos
+
+Criar pares personalizados (personagem + gato)
+
+Salvar e listar pares favoritos
+
+documentação automática com Swagger
+
+Foram implementados
+Level 1 - Completo
+Level 2 - Faltou testes unitarios
+Level 3 - Rotas Get e post, Salvo em memoria, Documentacao via swagger
+
+
+
 [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
 
 ## Project setup
